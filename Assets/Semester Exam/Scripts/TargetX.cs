@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class TargetX : MonoBehaviour
@@ -61,7 +62,7 @@ public class TargetX : MonoBehaviour
     {
         Destroy(gameObject);
 
-        if (other.gameObject.CompareTag("Sensor") && !gameObject.CompareTag("Bad"))
+        if (other.gameObject.CompareTag("Clicker") && !gameObject.CompareTag("Bad"))
         {
             gameManagerX.GameOver();
         } 
@@ -71,7 +72,7 @@ public class TargetX : MonoBehaviour
     // Display explosion particle at object's position
     void Explode ()
     {
-        Instantiate(explosion, transform.position, explosion.transform.rotation);
+        Instantiate(explosionFx, transform.position, explosionFx.transform.rotation);
     }
 
     // After a delay, Moves the object behind background so it collides with the Sensor object

@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,6 +21,11 @@ public class DifficultyButtonX : MonoBehaviour
     /* When a button is clicked, call the StartGame() method
      * and pass it the difficulty value (1, 2, 3) from the button 
     */
+
+    void StartGame()
+    {
+        difficulty /= 6;
+    }
     void SetDifficulty()
     {
         Debug.Log(button.gameObject.name + " was clicked");
